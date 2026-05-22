@@ -10,7 +10,7 @@ pipeline {
 
         stage('Gitleaks Scan') {
             steps {
-                bat 'gitleaks detect --source .'
+                bat '"C:\\Users\\ASUS\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gitleaks.Gitleaks_Microsoft.Winget.Source_8wekyb3d8bbwe\\gitleaks.exe" detect --source .'
             }
         }
 
@@ -23,7 +23,7 @@ pipeline {
         stage('Trivy Scan') {
             steps {
                 bat '''
-                trivy image ^
+                "C:\\Users\\ASUS\\AppData\\Local\\Microsoft\\WinGet\\Packages\\AquaSecurity.Trivy_Microsoft.Winget.Source_8wekyb3d8bbwe\\trivy.exe" image ^
                 --severity HIGH,CRITICAL ^
                 --exit-code 1 ^
                 %IMAGE%
@@ -34,11 +34,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy to Kubernetes'
-            }
-        }
-        stage('Gitleaks Scan') {
-            steps {
-        bat '"C:\\Users\\ASUS\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gitleaks.Gitleaks_Microsoft.Winget.Source_8wekyb3d8bbwe\\gitleaks.exe" detect --source .'
             }
         }
     }
