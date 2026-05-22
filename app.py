@@ -1,7 +1,7 @@
 from flask import Flask
 
 app = Flask(__name__)
-AWS_SECRET_ACCESS_KEY="demo_test_secret_123"
+AWS_SECRET_ACCESS_KEY="demo_secret"
 
 @app.route('/')
 def home():
