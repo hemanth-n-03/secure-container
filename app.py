@@ -1,8 +1,7 @@
 from flask import Flask
 
 app = Flask(__name__)
-AWS_SECRET_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLE"
-github_token = "ghp_123456789012345678901234567890123456"
+
 
 @app.route('/')
 def home():
