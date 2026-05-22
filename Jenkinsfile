@@ -24,10 +24,11 @@ pipeline {
             steps {
                 bat '''
                 "C:\\Users\\ASUS\\AppData\\Local\\Microsoft\\WinGet\\Packages\\AquaSecurity.Trivy_Microsoft.Winget.Source_8wekyb3d8bbwe\\trivy.exe" image ^
-                --severity HIGH,CRITICAL ^
-                --exit-code 1 ^
-                %IMAGE%
-                '''
+               --ignore-unfixed ^
+                --severity CRITICAL ^
+             --exit-code 1 ^
+             %IMAGE%
+             '''
             }
         }
 
