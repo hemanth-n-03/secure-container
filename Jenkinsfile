@@ -36,5 +36,10 @@ pipeline {
                 echo 'Deploy to Kubernetes'
             }
         }
+        stage('Gitleaks Scan') {
+            steps {
+        bat '"C:\\Users\\ASUS\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gitleaks.Gitleaks_Microsoft.Winget.Source_8wekyb3d8bbwe\\gitleaks.exe" detect --source .'
+            }
+        }
     }
 }
