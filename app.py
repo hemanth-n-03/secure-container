@@ -2,7 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-github_token = "ghp_123456789012345678901234567890123456"
+
 
 @app.route('/')
 def home():
